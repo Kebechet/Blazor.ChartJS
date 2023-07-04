@@ -4,7 +4,7 @@ This repo contains lean wrapper around [Chart.js](https://www.chartjs.org/) for 
 
 ## Motivation: 
 
-Repository [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) is not longer maintained 
+Repository [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) is no longer maintained 
 and also it is stuck at old version `chart.js@2.9.4`. 
 The lack of maintainers is quite often problem. 
 Thats why I have created the leanest wrapper possible. 
