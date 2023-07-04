@@ -22,7 +22,7 @@ This should be quite future proof and if needed also a beginner should be able t
 ```
 @using Blazor.ChartJS
 
-<Chart Config="_config" />
+<Chart @ref="_chart" Config="_config" />
 ```
 
 `Index.razor.cs`
