@@ -22,7 +22,7 @@ This should be quite future proof and if needed also a beginner should be able t
 ```
 @using Blazor.ChartJS
 
-<Chart @ref="_chart" Config="_config" />
+<Chart @ref="_chart" Config="_config" OnChartInitialized="() => _isInitializing = false" />
 ```
 
 `Index.razor.cs`
@@ -35,6 +35,7 @@ namespace BlazorChartTest.Pages;
 public partial class Index
 {
     private Chart? _chart { get; set; }
+    private bool _isInitializing = true;
 
     private readonly dynamic _config = new
     {
@@ -58,15 +59,51 @@ public partial class Index
                 }
             }
         },
+        Options = new
+        {
+            Responsive = true,
+            Scales = new
+            {
+                X = new
+                {
+                    Display = true,
+                    BeginAtZero = true
+                },
+                Y = new
+                {
+                    Display = true,
+                    BeginAtZero = true,
+                    Grace = "10%"
+                }
+            },
+            Plugins = new
+            {
+                Legend = new
+                {
+                    Display = true,
+                    Position = "top"
+                }
+            }
+        }
     };
 
     public async Task Rerender()
     {
+        if(_isInitializing)
+        {
+            return;
+        }
+
         await _chart!.Rerender();
     }
 
     public async Task Update()
     {
+        if(_isInitializing)
+        {
+            return;
+        }
+
         var data = new
         {
             Labels = new[] { "faast", "Blue", "Yellow", "Green", "Purple", "Orange" },
@@ -87,7 +124,7 @@ public partial class Index
             }
         };
 
-        await _chart!.Update(data, true);
+        await _chart!.Update(data, false);
     }
 }
 ```
