@@ -16,7 +16,7 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>4.3.0.2</Version>
+		<Version>4.3.0.3</Version>
 		<PackageReleaseNotes>First release of the package</PackageReleaseNotes>
 	</PropertyGroup>
 
