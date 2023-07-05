@@ -18,6 +18,13 @@ window.updateChart = (chartId, data, animationString) => {
     chart.update(animationString);
 };
 
+window.clearChartData = (chartId) => {
+    var chart = window.getChart(chartId);
+    chart.data.labels.length = 0;
+    chart.data.datasets.length = 0;
+    chart.update("none");
+};
+
 window.destroyChart = (chartId) => {
     var chart = window.getChart(chartId);
     var chartIndex = chartPrison.indexOf(chart);

@@ -38,10 +38,15 @@ public partial class Chart
         await Create(Config);
     }
 
-    public async Task Update(object data, bool showAnimation=true)
+    public async Task Update(object data, bool showAnimation = true)
     {
         var animationString = showAnimation ? "" : "none";
 
         await _jsRuntime.InvokeAsync<object>("updateChart", _chartId, data, animationString);
+    }
+
+    public async Task ClearData()
+    {
+        await _jsRuntime.InvokeAsync<object>("clearChartData", _chartId);
     }
 }

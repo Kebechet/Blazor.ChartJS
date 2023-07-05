@@ -11,7 +11,7 @@ Thats why I have created the leanest wrapper possible.
 This should be quite future proof and if needed also a beginner should be able to bump `chart.js` to newer version or fix potential bug in the wrapper.
 
 ## Usage example
-- our wrapper contains methods: `createChart`, `getChart`, `updateChart`, `destroyChart`
+- our wrapper contains methods: `createChart`, `getChart`, `updateChart`, `clearChartData`, `destroyChart`
 - all data and configurations are provided as anonymous objects. Thats why it should be 1:1 with [chart.js docs](https://www.chartjs.org/docs/latest/)
 
 
