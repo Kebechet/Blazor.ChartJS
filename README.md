@@ -1,4 +1,4 @@
-# Blazor.ChartJS
+﻿# Blazor.ChartJS
 
 This repo contains lean wrapper around [Chart.js](https://www.chartjs.org/) for [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor).
 
@@ -144,6 +144,24 @@ public partial class Index
 - only to improve basic functionality of the wrapper. Purpose of this wrapper is to be as simple as possible.
 - to fix bugs
 - to automate overall workflow
+
+## How to manually adjust `chart.js`
+- clone official [Chart.js](https://github.com/chartjs/Chart.js) repo
+- do necessary changes
+- install `pnpm` from [here](https://pnpm.io/installation)
+- open powershell as admin
+  - ⚠️ in case you dont have privileges to run scripts then run: `Set-ExecutionPolicy -ExecutionPolicy Bypass`
+    - select option `A` for all
+- navigate to `Chart.js` folder
+- run following scripts
+  - `pnpm install`
+  - `pnpm install -g json`
+  - `json -I -f package.json -e "this.version='9.9.9'"`
+  - `pnpm run build`
+  - `pnpm pack`
+- then the final minified file is located in `dist/chart.umd.js`
+- rename `chart.umd.js` to `Chart.js`
+- then replace `wwwroot/Chart.js` with the new one
 
 ## TODO
 - [ ] add examples
