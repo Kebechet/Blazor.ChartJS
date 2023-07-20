@@ -10,6 +10,17 @@ The lack of maintainers is quite often problem.
 Thats why I have created the leanest wrapper possible. 
 This should be quite future proof and if needed also a beginner should be able to bump `chart.js` to newer version or fix potential bug in the wrapper.
 
+## Versioning
+- `chart.js` version is part of the package version.
+- examples:
+    - package version `4.3.0.0` means that `chart.js` version used is `4.3.0`
+    - package version `4.3.0.2` means that `chart.js` version used is `4.3.0` and we did 2 bugfixes/improvements in the wrapper
+
+## ChartJS custom changes
+- we use `chart.js` version: `4.3.1` *BUT* we have added one extra fix that is not yet merged into `chart.js master` repo.
+- Bugs fixed by [PR #11132](https://github.com/chartjs/Chart.js/pull/11132) are [#10932](https://github.com/chartjs/Chart.js/issues/10932), [#11089](https://github.com/chartjs/Chart.js/issues/11089)
+- after this PR is merged to master we will fallback to `chart.js` master branch
+
 ## Usage example
 - our wrapper contains methods: `createChart`, `getChart`, `updateChart`, `clearChartData`, `destroyChart`
 - all data and configurations are provided as anonymous objects. Thats why it should be 1:1 with [chart.js docs](https://www.chartjs.org/docs/latest/)
@@ -134,11 +145,6 @@ public partial class Index
 - to fix bugs
 - to automate overall workflow
 
-## Versioning
-- `chart.js` version is part of the package version.
-- examples:
-    - package version `4.3.0.0` means that `chart.js` version used is `4.3.0`
-    - package version `4.3.0.2` means that `chart.js` version used is `4.3.0` and we did 2 bugfixes/improvements in the wrapper
 ## TODO
 - [ ] add examples
 - [ ] automate ChartJS version bump

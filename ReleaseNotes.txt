@@ -1,0 +1,16 @@
+
+4.3.0.4 Release (2023-07-20)
+- Merged external PR and built custom Chart.js based on v4.3.0
+
+4.3.0.3 Release (2023-07-05)
+- Added ClearChartData method
+- Added ColorHelper
+
+4.3.0.2 Release (2023-07-04)
+- Dependency package version downgrade
+
+4.3.0.1 Release (2023-07-04)
+- Fixed Readme
+
+4.3.0.0-preview1 Release (2023-07-04)
+- Initial release
