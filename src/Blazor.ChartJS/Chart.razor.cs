@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazor.ChartJS.Extensions;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.Text.Json;
 
 namespace Blazor.ChartJS;
 
@@ -28,21 +30,32 @@ public partial class Chart
 
     private async Task Create(object config)
     {
-        Config = config;
-        await _jsRuntime.InvokeAsync<object>("createChart", _chartId, config);
+        await _jsRuntime.InvokeAsync<object>("createChart", _chartId, config.NormalizeObject());
     }
 
-    public async Task Rerender()
+    public async Task Rerender(object? config = null)
     {
+        if(config is not null)
+        {
+            Config = config;
+        }
+
         await DisposeAsync();
         await Create(Config);
     }
 
-    public async Task Update(object data, bool showAnimation = true)
+    public async Task UpdateData(object data, bool showAnimation = true)
     {
         var animationString = showAnimation ? "" : "none";
 
-        await _jsRuntime.InvokeAsync<object>("updateChart", _chartId, data, animationString);
+        await _jsRuntime.InvokeAsync<object>("updateChartData", _chartId, data.NormalizeObject(), animationString);
+    }
+
+    public async Task UpdateOptions(object optionsData, bool showAnimation = true)
+    {
+        var animationString = showAnimation ? "" : "none";
+
+        await _jsRuntime.InvokeAsync<object>("updateChartOptions", _chartId, optionsData.NormalizeObject(), animationString);
     }
 
     public async Task ClearData()
