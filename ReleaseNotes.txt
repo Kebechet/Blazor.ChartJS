@@ -1,4 +1,8 @@
 
+4.3.0.5 Release (2024-03-04)
+- Changed body of 2 methods
+- Improved parsing of config object
+
 4.3.0.4 Release (2023-07-20)
 - Merged external PR and built custom Chart.js based on v4.3.0
 
