@@ -12,6 +12,13 @@ window.getChart = (chartId) => {
     return window.chartPrison.find(c => c.canvas.id === chartId);
 };
 
+window.updateChart = (chartId, data, options, animationString) => {
+    var chart = window.getChart(chartId);
+    chart.data = data;
+    chart.options = options;
+    chart.update(animationString);
+};
+
 window.updateChartData = (chartId, data, animationString) => {
     var chart = window.getChart(chartId);
     chart.data = data;

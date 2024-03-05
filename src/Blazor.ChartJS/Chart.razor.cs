@@ -44,6 +44,13 @@ public partial class Chart
         await Create(Config);
     }
 
+    public async Task Update(object data, object options, bool showAnimation = true)
+    {
+        var animationString = showAnimation ? "" : "none";
+
+        await _jsRuntime.InvokeAsync<object>("updateChart", _chartId, data.NormalizeObject(), options.NormalizeObject(), animationString);
+    }
+
     public async Task UpdateData(object data, bool showAnimation = true)
     {
         var animationString = showAnimation ? "" : "none";
