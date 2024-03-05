@@ -16,7 +16,7 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<RepositoryType>git</RepositoryType>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>4.3.0.5</Version>
+		<Version>4.3.0.6</Version>
 		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../ReleaseNotes.txt"))</PackageReleaseNotes>
 	</PropertyGroup>
 
