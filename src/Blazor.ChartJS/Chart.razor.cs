@@ -8,6 +8,7 @@ namespace Blazor.ChartJS;
 public partial class Chart
 {
     [Parameter, EditorRequired] public object Config { get; set; } = new();
+    [Parameter] public string Classes { get; set; } = string.Empty;
     [Parameter] public double? Width { get; set; }
     [Parameter] public double? Height { get; set; }
     [Parameter] public EventCallback OnChartInitialized { get; set; }
