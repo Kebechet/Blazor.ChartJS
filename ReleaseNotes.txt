@@ -1,3 +1,6 @@
+4.3.0.8 Release (2024-06-23)
+- Added "beforeWebStart" JS initializer
+
 4.3.0.7 Release (2024-05-31)
 - Added "Classes" parameter
 

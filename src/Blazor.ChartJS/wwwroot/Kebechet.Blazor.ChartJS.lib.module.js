@@ -1,4 +1,8 @@
-﻿export function beforeStart(options, extensions) {
+﻿export function beforeWebStart(options, extensions) {
+    beforeStart(options, extensions);
+}
+
+export function beforeStart(options, extensions) {
     console.log("Injecting Chart.js");
 
     var element = document.createElement('script');
