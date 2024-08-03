@@ -18,7 +18,7 @@ This should be quite future proof and if needed also a beginner should be able t
 
 ## ChartJS custom changes
 - we use `chart.js` version: `4.3.1` *BUT* we have added one extra fix that is not yet merged into `chart.js master` repo.
-- Bugs fixed by [PR #11132](https://github.com/chartjs/Chart.js/pull/11132) are [#10932](https://github.com/chartjs/Chart.js/issues/10932), [#11089](https://github.com/chartjs/Chart.js/issues/11089)
+- Bugs fixed by [PR #11132](https://github.com/chartjs/Chart.js/pull/11132) are [#10932](https://github.com/chartjs/Chart.js/issues/10932), [#11089](https://github.com/chartjs/Chart.js/issues/11089), [#11224](https://github.com/chartjs/Chart.js/issues/11224)
 - after this PR is merged to master we will fallback to `chart.js` master branch
 
 ## Usage example
